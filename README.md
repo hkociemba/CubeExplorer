@@ -6,6 +6,6 @@ Cube Explorer developed over many years and in its current version 5.13 it is al
 
 Nevertheless I put the source code here for documentary purposes. I had to omit some third party files due to copyright issues though.
 
-For more information on Cube Explorer, the mathematics behind the program and download of exe files visit
+For more information on Cube Explorer, the mathematics behind the program and download of exe files visit the
 
 ## <a href="http://kociemba.org/cube.htm">Cube Explorer Homepage</a>
