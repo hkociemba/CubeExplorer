@@ -1,2 +1,3 @@
 # Cube-Explorer
-A program about Rubik's cube with a lot of features.
+
+Cube Explorer developed over many years and in its current version 5.13 it is almost finished (concerning the functionality). It was developed with Delphi 6 - a software which does not run without problems on current Windows installations. I have no illusions - there will not be many people who will be able to recompile the source code to a working program. To create a 64-bit program a complete redesign will be necessary...
