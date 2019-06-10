@@ -5,7 +5,7 @@ interface
 uses Graphics,syncobjs;
 
 
-const QTM = true;//Für HTM auf false setzen
+const QTM = false;//Für HTM auf false setzen
 
 const SPECIAL4 = false;//Spezielle Version für Phase3 von 4x4x4 Würfel
 
@@ -14,11 +14,11 @@ const vers='QTM';
 {$ELSE}
 const vers='HTM';
 {$IFEND}
-const curVersion = 'Cube Explorer 5.13 '+vers;
+const curVersion = 'Cube Explorer 5.14 '+vers;
 
 
 
-const copyright = '(c) H.Kociemba 2017';
+const copyright = '(c) H.Kociemba 2019';
 const UHUGE = True;//Ultrahuge solver, jetzt Standardversion
 
 const BatchTimeInverval  = 1000;//Abstände bei Autorun, default 1000

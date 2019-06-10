@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 357
-  Top = 321
+  Left = 454
+  Top = 211
   HelpContext = 1008
   HorzScrollBar.Visible = False
   VertScrollBar.Visible = False

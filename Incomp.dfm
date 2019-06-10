@@ -1,6 +1,6 @@
 object Incomplete: TIncomplete
-  Left = 400
-  Top = 446
+  Left = 264
+  Top = 319
   BorderStyle = bsDialog
   Caption = 'Maneuver Window (incomplete cubes)'
   ClientHeight = 513
@@ -31,18 +31,18 @@ object Incomplete: TIncomplete
     TabOrder = 0
   end
   object BStop: TButton
-    Left = 216
+    Left = 240
     Top = 373
-    Width = 169
+    Width = 161
     Height = 33
     Caption = 'Stop Search'
     TabOrder = 1
     OnClick = BStopClick
   end
   object BAdd: TButton
-    Left = 216
+    Left = 240
     Top = 467
-    Width = 169
+    Width = 161
     Height = 33
     Caption = 'Add Solutions to Main Window'
     TabOrder = 2
@@ -51,12 +51,12 @@ object Incomplete: TIncomplete
   object GroupBox1: TGroupBox
     Left = 13
     Top = 373
-    Width = 191
+    Width = 220
     Height = 67
     Caption = 'Faces to Exclude'
     TabOrder = 3
     object FFilter: TCheckBox
-      Left = 124
+      Left = 97
       Top = 18
       Width = 29
       Height = 17
@@ -64,7 +64,7 @@ object Incomplete: TIncomplete
       TabOrder = 0
     end
     object DFilter: TCheckBox
-      Left = 46
+      Left = 37
       Top = 18
       Width = 29
       Height = 17
@@ -72,7 +72,7 @@ object Incomplete: TIncomplete
       TabOrder = 1
     end
     object LFilter: TCheckBox
-      Left = 85
+      Left = 67
       Top = 18
       Width = 29
       Height = 17
@@ -96,11 +96,38 @@ object Incomplete: TIncomplete
       TabOrder = 4
       OnClick = SliceAllowedClick
     end
+    object MFilter: TCheckBox
+      Left = 127
+      Top = 18
+      Width = 33
+      Height = 17
+      Caption = 'M'
+      Enabled = False
+      TabOrder = 5
+    end
+    object EFilter: TCheckBox
+      Left = 157
+      Top = 18
+      Width = 28
+      Height = 17
+      Caption = 'E'
+      Enabled = False
+      TabOrder = 6
+    end
+    object SFilter: TCheckBox
+      Left = 187
+      Top = 18
+      Width = 28
+      Height = 17
+      Caption = 'S'
+      Enabled = False
+      TabOrder = 7
+    end
   end
   object BClear: TButton
-    Left = 216
+    Left = 240
     Top = 420
-    Width = 169
+    Width = 161
     Height = 33
     Caption = 'Clear Window'
     TabOrder = 4
@@ -109,7 +136,7 @@ object Incomplete: TIncomplete
   object CenTwistExclude: TGroupBox
     Left = 13
     Top = 447
-    Width = 191
+    Width = 212
     Height = 53
     Caption = 'Center Twists to Ignore'
     TabOrder = 5
@@ -156,7 +183,7 @@ object Incomplete: TIncomplete
     object BTwist: TCheckBox
       Left = 157
       Top = 24
-      Width = 31
+      Width = 36
       Height = 17
       Caption = 'B'
       TabOrder = 5

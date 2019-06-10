@@ -15,6 +15,9 @@ Herbert Kociemba
 
 Version History:
 
+2019-10-07  Cube Explorer 5.14
+            - The search for incomplete cube did not work correctly when using slice turns. The fixed version
+              also has the possibility to exclude faces in this case now.
 
 2017-23-04  Cube Explorer 5.13
             - Fixed some issues with Run|Start Autorun feature

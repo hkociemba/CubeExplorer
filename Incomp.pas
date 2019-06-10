@@ -25,6 +25,9 @@ type
     FTwist: TCheckBox;
     BTwist: TCheckBox;
     SliceAllowed: TCheckBox;
+    MFilter: TCheckBox;
+    EFilter: TCheckBox;
+    SFilter: TCheckBox;
     procedure BStopClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure BAddClick(Sender: TObject);
@@ -67,8 +70,8 @@ type  IncompNode = record
     minN: Integer;//minimal length of solution maneuver
     edge51,edge52,edge53: array[0..4] of Edge;
 
-    filter: Boolean;//true if moves are filtered
-    excludeAxis,excludeAxisRot: array[U..Fs] of Boolean;
+   // filter: Boolean;//true if moves are filtered
+    excludeAxis{*,excludeAxisRot*}: array[U..Fs] of Boolean;
     isOriented:Boolean;
     ignoreTwists: Integer;
 
@@ -1424,6 +1427,16 @@ l1:
    end;
    s:= s1+tmp;
  end;
+ // in case of slice moves exclude maneuvers which contain forbidden faces
+
+  if (Incomplete.FFilter).Checked and (Pos('F',s)> 0) then exit;
+  if (Incomplete.DFilter).Checked and (Pos('D',s)> 0) then exit;
+  if (Incomplete.LFilter).Checked and (Pos('L',s)> 0) then exit;
+  if (Incomplete.BFilter).Checked and (Pos('B',s)> 0) then exit;
+  if (Incomplete.EFilter).Checked and (Pos('E',s)> 0) then exit;
+  if (Incomplete.MFilter).Checked and (Pos('M',s)> 0) then exit;
+  if (Incomplete.SFilter).Checked and (Pos('S',s)> 0) then exit;
+
  Incomplete.ManInfo.Lines.Add(s+ln);
 end;
 
@@ -1559,7 +1572,7 @@ incAxis:
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   if (not useSlices and (np^.axis=B)) or (np^.axis=Fs) then goto left;
   Inc(np^.axis);
-  while excludeAxis[np^.axis] do
+  while (not useSlices) and excludeAxis[np^.axis] do
   begin
     if (not useSlices and (np^.axis=B)) or (np^.axis=Fs) then goto left;
     Inc(np^.axis);
@@ -1577,10 +1590,10 @@ checkNeighbourAxis:
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     if useSlices then
     begin
-      if np^.axis<=F then
-      if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
-      if np^.axis<=B then
-      if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
+     // if np^.axis<=F then
+     // if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
+     // if np^.axis<=B then
+     // if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
                                                                //D*U, L*R already done
       if np^.axis>=Us then
       if TurnAxis(Ord(np^.axis)- 3)=np1^.axis then goto incAxis;//no D*Us, L*Rs etc.
@@ -1781,7 +1794,7 @@ incAxis:
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   if (not useSlices and (np^.axis=B)) or (np^.axis=Fs) then goto left;
   Inc(np^.axis);
-  while excludeAxis[np^.axis] do
+  while  (not useSlices) and excludeAxis[np^.axis] do
   begin
     if (not useSlices and (np^.axis=B)) or (np^.axis=Fs) then goto left;
     Inc(np^.axis);
@@ -1799,10 +1812,10 @@ checkNeighbourAxis:
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     if useSlices then
     begin
-      if np^.axis<=F then
-      if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
-      if np^.axis<=B then
-      if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
+     // if np^.axis<=F then
+     // if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
+     // if np^.axis<=B then
+     // if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
                                                                //D*U, L*R already done
       if np^.axis>=Us then
       if TurnAxis(Ord(np^.axis)- 3)=np1^.axis then goto incAxis;//no D*Us, L*Rs etc.
@@ -1989,7 +2002,7 @@ incAxis:
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   if (not useSlices and (np^.axis=B)) or (np^.axis=Fs) then goto left;
   Inc(np^.axis);
-  while excludeAxis[np^.axis] do
+  while  (not useSlices) and excludeAxis[np^.axis] do
   begin
     if (not useSlices and (np^.axis=B)) or (np^.axis=Fs) then goto left;
     Inc(np^.axis);
@@ -2007,10 +2020,10 @@ checkNeighbourAxis:
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     if useSlices then
     begin
-      if np^.axis<=F then
-      if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
-      if np^.axis<=B then
-      if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
+     // if np^.axis<=F then
+     // if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
+     // if np^.axis<=B then
+     // if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
                                                                //D*U, L*R already done
       if np^.axis>=Us then
       if TurnAxis(Ord(np^.axis)- 3)=np1^.axis then goto incAxis;//no D*Us, L*Rs etc.
@@ -2211,7 +2224,7 @@ incAxis:
 //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
   if (not useSlices and (np^.axis=B)) or (np^.axis=Fs) then goto left;
   Inc(np^.axis);
-  while excludeAxis[np^.axis] do
+  while  (not useSlices) and excludeAxis[np^.axis] do
   begin
     if (not useSlices and (np^.axis=B)) or (np^.axis=Fs) then goto left;
     Inc(np^.axis);
@@ -2230,10 +2243,10 @@ checkNeighbourAxis:
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     if useSlices then
     begin
-      if np^.axis<=F then
-      if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
-      if np^.axis<=B then
-      if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
+     // if np^.axis<=F then
+     // if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
+     // if np^.axis<=B then
+     // if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
                                                                //D*U, L*R already done
       if np^.axis>=Us then
       if TurnAxis(Ord(np^.axis)- 3)=np1^.axis then goto incAxis;//no D*Us, L*Rs etc.
@@ -2507,18 +2520,16 @@ begin
     if (Sender as TCheckBox).Checked then
     begin
       useSlices:= true;
-      BFilter.Enabled:=false;
-      DFilter.Enabled:=false;
-      LFilter.Enabled:=false;
-      FFilter.Enabled:=false;
+      MFilter.Enabled:=true;
+      EFilter.Enabled:=true;
+      SFilter.Enabled:=true;
     end
     else
     begin
       useSlices:=false;
-      BFilter.Enabled:=true;
-      DFilter.Enabled:=true;
-      LFilter.Enabled:=true;
-      FFilter.Enabled:=true;
+      MFilter.Enabled:=false;
+      EFilter.Enabled:=false;
+      SFilter.Enabled:=false;
     end;
   //  CreateFullCornerPruningTable(useSlices);
     Form1.SetUpProgressBar(0,100,'');

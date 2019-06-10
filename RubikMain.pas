@@ -1219,20 +1219,20 @@ begin
     //set the filter variables
   with Incomplete do
   begin
-   if FFilter.Checked or DFilter.Checked or LFilter.Checked or BFilter.Checked
-   then inco.filter:=true else inco.filter:= false;
+  // if FFilter.Checked or DFilter.Checked or LFilter.Checked or  BFilter.Checked
+  // then inco.filter:=true else inco.filter:= false;
   end;
   for t:= U to Fs do
   begin
     inco.excludeAxis[t]:=false;
-    inco.excludeAxisRot[t]:=false;
+    //inco.excludeAxisRot[t]:=false;
   end;
   with Incomplete do
   begin
-    if FFilter.Checked then  inco.excludeAxisRot[F]:=true;//für den Fall dass
-    if DFilter.Checked then  inco.excludeAxisRot[D]:=true;//Rotationen
-    if LFilter.Checked then  inco.excludeAxisRot[L]:=true;//erlaubt sind
-    if BFilter.Checked then  inco.excludeAxisRot[B]:=true;
+    //if FFilter.Checked then  inco.excludeAxisRot[F]:=true;//für den Fall dass
+    //if DFilter.Checked then  inco.excludeAxisRot[D]:=true;//Rotationen
+    //if LFilter.Checked then  inco.excludeAxisRot[L]:=true;//erlaubt sind
+    //if BFilter.Checked then  inco.excludeAxisRot[B]:=true;
   end;
   with Incomplete do
   begin
