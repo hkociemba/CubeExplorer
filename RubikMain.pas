@@ -599,6 +599,7 @@ var
   MausPos:TPoint;
   manSep: String;//entweder f,q,s,sq
   writeToFile: Boolean;//Antwort des Webservers in file schreiben
+  threadN: Integer; //Anzahl der bereits vorhandenen Threads beim Autorun Start
 
   CS: TRTLCriticalSection;
 
@@ -4612,7 +4613,7 @@ begin
        {$IF SPECIAL4}
        BatchTimer.Interval:=1;
     {$IFEND}
-
+    threadN := CountThreads(GetCurrentProcessId);
     BatchTimer.Tag:=0;
     for i:= 0 to fcN-1 do
      if fc[i].selected then begin BatchTimer.Tag:= i; break; end;
@@ -4635,7 +4636,7 @@ procedure TForm1.BatchTimerTimer(Sender: TObject);
 var i,k,tg,cs: Integer; j: Face;
 begin
   cs:= CountThreads(GetCurrentProcessId);
-  If maxAutoRunThreads <= cs-12 then exit; //FileopenDialog macht von vorneherein 12 Threads, die offen bleiben
+  If maxAutoRunThreads <= cs-threadN then exit; //
   if StartAutoModusforOptimalSolver1.Enabled then
   begin
     tg:= BatchTimer.Tag;
@@ -4707,6 +4708,7 @@ begin
      if fc[i].selected then begin BatchTimer.Tag:= i-1; break; end;
     StartAutomodusforOptimalSolver1.Enabled:=false;
     AutoRunIdx.Visible:=true;
+    threadN := CountThreads(GetCurrentProcessId);
     BatchTimerTimer(nil);
   end
   else

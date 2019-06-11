@@ -14,7 +14,7 @@ const vers='QTM';
 {$ELSE}
 const vers='HTM';
 {$IFEND}
-const curVersion = 'Cube Explorer 5.14 '+vers;
+const curVersion = 'Cube Explorer 5.15 '+vers;
 
 
 
