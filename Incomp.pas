@@ -1617,10 +1617,10 @@ checkNeighbourAxis:
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     if useSlices then
     begin
-      if np^.axis<=F then
-      if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
-      if np^.axis<=B then
-      if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
+      // if np^.axis<=F then
+      // if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
+      // if np^.axis<=B then
+      // if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
                                                                //D*U, L*R already done
       if np^.axis>=Us then
       if TurnAxis(Ord(np^.axis)- 3)=np1^.axis then goto incAxis;//no D*Us, L*Rs etc.
@@ -1839,10 +1839,10 @@ checkNeighbourAxis:
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     if useSlices then
     begin
-      if np^.axis<=F then
-      if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
-      if np^.axis<=B then
-      if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
+      // if np^.axis<=F then
+      // if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
+      // if np^.axis<=B then
+      // if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
                                                                //D*U, L*R already done
       if np^.axis>=Us then
       if TurnAxis(Ord(np^.axis)- 3)=np1^.axis then goto incAxis;//no D*Us, L*Rs etc.
@@ -2047,10 +2047,10 @@ checkNeighbourAxis:
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     if useSlices then
     begin
-      if np^.axis<=F then
-      if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
-      if np^.axis<=B then
-      if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
+      // if np^.axis<=F then
+      // if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
+      // if np^.axis<=B then
+      // if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
                                                                //D*U, L*R already done
       if np^.axis>=Us then
       if TurnAxis(Ord(np^.axis)- 3)=np1^.axis then goto incAxis;//no D*Us, L*Rs etc.
@@ -2270,10 +2270,10 @@ checkNeighbourAxis:
     //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     if useSlices then
     begin
-      if np^.axis<=F then
-      if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
-      if np^.axis<=B then
-      if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
+      // if np^.axis<=F then
+      // if TurnAxis(Ord(np^.axis)+6)=np1^.axis then goto incAxis;//no Us*U, Rs*R etc.
+      // if np^.axis<=B then
+      // if TurnAxis(Ord(np^.axis)+3)=np1^.axis then goto incAxis;//no Us*D, Rs*L etc.
                                                                //D*U, L*R already done
       if np^.axis>=Us then
       if TurnAxis(Ord(np^.axis)- 3)=np1^.axis then goto incAxis;//no D*Us, L*Rs etc.

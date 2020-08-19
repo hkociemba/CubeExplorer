@@ -3636,7 +3636,7 @@ object Form1: TForm1
           Top = 19
           Width = 305
           Height = 21
-          ItemHeight = 13
+          ItemHeight = 0
           TabOrder = 0
           OnChange = CapDevsChange
         end
@@ -3868,6 +3868,10 @@ object Form1: TForm1
       end
       object SortCubesbyManeuverLength: TMenuItem
         Caption = 'Sort Cubes by Maneuver Length'
+        OnClick = SortCubesbyPatternNameClick
+      end
+      object SortCubesbyCubeID: TMenuItem
+        Caption = 'Sort Cubes by Cube ID'
         OnClick = SortCubesbyPatternNameClick
       end
       object N12: TMenuItem

@@ -3608,6 +3608,7 @@ begin
 
    Form1.SetUpProgressBar(0,13,'Creating '+filename+' (1881 MB)');
 
+
     while (done<>Int64(64430)*2187*70)do
     begin
       if realdepth=10 then flipBackward:=true;//evtl. auch 9 nehmen
