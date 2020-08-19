@@ -15,6 +15,10 @@ Herbert Kociemba
 
 Version History:
 
+2019-10-07  Cube Explorer 5.15
+            - Autorun did not handle the number of allowed threads correctly.
+            - Option to sort the cubes in the main window by the cube ID.
+
 2019-10-07  Cube Explorer 5.14
             - The search for incomplete cube did not work correctly when using slice turns. The fixed version
               also has the possibility to exclude faces in this case now.
