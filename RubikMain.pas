@@ -341,6 +341,7 @@ type
     MultiplyInverse: TMenuItem;
     CBExactSym: TCheckBox;
     CBExactAsym: TCheckBox;
+    SortCubesbyCubeID: TMenuItem;
     procedure FormCreate(Sender: TObject);
 
     procedure FacePaintPaint(Sender: TObject);
@@ -5186,6 +5187,9 @@ var tempList: TSTringList;
     i,p,index: Integer;s: String;
     f:array of FaceletCube;
     yPos:array of Integer;
+    cc: CubieCube;
+    oid,pid: Int64;
+
 begin
    SetLength(f,fcN);
    SetLength(yPos,fcN);
@@ -5201,9 +5205,16 @@ begin
        if Sender=SortCubesbyPatternName
        then
          s:= fc[i].patName+s+'*%35786%*'+IntToStr(i)//Hänge vorm sortieren den Index an
-       else
-         s:= s+fc[i].patName+'*%35786%*'+IntToStr(i);
-//       fc[i].patName:=s;
+       else if Sender=SortCubesbyManeuverLength then
+         s:= s+fc[i].patName+'*%35786%*'+IntToStr(i)
+       else //sort by cubeID
+       begin
+         cc:= CubieCube.Create(fc[i]);
+         oid:= cc.EdgeOriCoord+2048*cc.CornOriCoord;
+         pid:= cc.EdgePermCoord + 40320*cc.CornPermCoord;
+         s:= Format('%.*d',[14, pid])+ Format('%.*d',[7, oid]) +'*%35786%*'+IntToStr(i);
+         cc.Free;
+       end;
        tempList.Add(s);
      end;
      tempList.Sort;
@@ -5214,7 +5225,6 @@ begin
        index:=StrToInt(s);
        f[i]:=fc[index];
        yPos[i]:=fc[i].y;//!!!!
-       //fc[i].patName:=tempList.Strings[i];
      end;
      for i:= 0 to fcN-1 do begin fc[i]:=f[i]; fc[i].y:=yPos[i];end;
 
