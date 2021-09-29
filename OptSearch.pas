@@ -82,7 +82,7 @@ begin
   else if Pos('Status',f.optManeuver)>0 then f.optManeuver:='Status: Not running';
   Form1.OutPut.Invalidate;
   f.running:=false; //stop
-  idaOldU.free;//doesnt matter if nil
+  idaOldU.free; //does not matter if nil
 
   if Form1.FreeThreadsonTerminate1.Checked then idaU:=nil;/////////////////
 

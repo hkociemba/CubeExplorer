@@ -50,7 +50,7 @@ unit D6OnHelpFix;
 ABout the D6 OnHelp bug:
 
   Delphi6 does not pass on all help calls to the OnHelp event.
-  Infact if you search for WMHelp code in Forms.pas you will see that
+  In fact if you search for WMHelp code in Forms.pas you will see that
   only Application.InvokeHelp() handles FOnHelp. And that it only works
   if the (biHelp in BorderIcons) property is true. 
 
@@ -91,7 +91,7 @@ Mini Tutorial:
   Thus typically you might do this
   a) call WinHelpTester_Enable(false)
   b) Make your WinHelp calls
-  c) call WinHelpTester_Enable(true) to reenable our OnHelp fix again.
+  c) call WinHelpTester_Enable(true) to re-enable our OnHelp fix again.
 
   == IHelpSelector
 
@@ -112,7 +112,7 @@ Mini Tutorial:
   viewer 1's UnderstandsTopic() and UnderstandsContext() so that they return
   false letting viewer 2 get a go.
 
-  Thats the end of the quick tour. Study HelpIntfs.pas (HelpManager),
+  That's the end of the quick tour. Study HelpIntfs.pas (HelpManager),
   WinHelpViewer.pas (Viewer 1 code) and D6OnHelp.pas (our viewer 2 code)
   to learn more about how it all works. Also read the online help.
 
@@ -252,7 +252,7 @@ begin
   Result := 0;      //return index of first item in supplied keyword list
 end;
 
-{Returning our name poistion in the provided list will ensure that we are used to display the TOC}
+{Returning our name position in the provided list will ensure that we are used to display the TOC}
 function THelpSelector.TableOfContents(Contents: TStrings): Integer;
 var I: Integer;
 begin

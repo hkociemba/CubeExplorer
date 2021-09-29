@@ -74,7 +74,7 @@ interface
   array. SHA-1 is called secure because it is computationally infeasible to
   find a message corresponding to a given message digest or to find a second
   (different) message which produces the same message digest. SHA-1 is used
-  to noninvertible convertion of the output of MT random number generator in
+  to noninvertible conversion of the output of MT random number generator in
   MT_SecureRandNext function (each fifty-five bytes from the random generator
   are replaced with twenty bytes of their secure hash).
 
@@ -99,7 +99,7 @@ type
 
 { MT_RandInit initialize the random number generator. Identificator of this
   generator is returned in ID parameter. It is used as the first parameter
-  at calling of all ather subsequent routines. For initialization you need to
+  at calling of all other subsequent routines. For initialization you need to
   pass into MT_RandInit some Seed value or the initial vector InitVector.
   The ID identificator must be destroyed by MT_RandDone at the end of work
   with this random generator. }
@@ -178,7 +178,7 @@ procedure MT_SecureRandFill(ID: TMTID; P: Pointer; L: Cardinal);
 procedure MT_SecureRandXOR(ID: TMTID; P: Pointer; L: Cardinal);
 
 { MT_RandDone releases all memory resources which is occupied by the random
-  number generator identified by ID. After that you cann't pass this ID into
+  number generator identified by ID. After that you can't pass this ID into
   any functions. }
 
 procedure MT_RandDone(ID: TMTID);
@@ -196,7 +196,7 @@ function MT_TimeStamp: Int64;
 { Q_CAST6SelfTest checks the CAST6-256 algorithm implementation by test
   vectors from RFC 2612. If this test passed successfully the function returns
   True else it returns False. The single specific feature of this CAST-256
-  implementation is an inverse byte-ordering (endianess). This feature
+  implementation is an inverse byte-ordering (endianness). This feature
   is not affected on security but some improve performance of the algorithm
   on PC-platform. }
 
@@ -319,7 +319,7 @@ end;
 
 function MT_CodesToStr(const S: string): string;
 const
-  Msg: string = 'Error during convertion string of hexadecimal codes into the string of characters';
+  Msg: string = 'Error during conversion string of hexadecimal codes into the string of characters';
 asm
         TEST    EAX,EAX
         JE      @@cl

@@ -81,7 +81,7 @@ Version History:
 2008-12-26  Cube Explorer 4.63
             -The autorun feature of Cube Explorer for solving many cubes takes
              advantage of machines with more than one processor (phyical or virtual).
-             With a Core i7 920 CPU (8 physical and virutal processors) and the 4.63s
+             With a Core i7 920 CPU (8 physical and virtual processors) and the 4.63s
              version about 490 cubes are solved optimally per hour.
 
 2008-09-25  Cube Explorer 4.62
@@ -108,7 +108,7 @@ Version History:
             -Edit|Arrange Selected Symmetric Cubes and Edit|Add Symmetry Info for Selected Cubes
              did not work correctly for twisted center facelets.
             -Some changes ins Search routine of Two-Phase-Algorithm for cubes with twisted centers
-             improves perfomance.
+             improves performance.
             -WCA scramble menu simplified  
 
 2008-08-12  Cube Explorer 4.50
@@ -307,7 +307,7 @@ Version History:
            -disabled some forgotten debugging code
 
 2004-03-27 Cube Explorer 3.16
-           -improved error handling in online cube-solver modul. Seems to run stable now.
+           -improved error handling in online cube-solver module. Seems to run stable now.
            -Option settings are saved in cube.ini now.
 
 2004-03-21 Cube Explorer 3.15

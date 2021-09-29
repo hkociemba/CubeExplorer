@@ -475,7 +475,7 @@ end; { procedure }
 {|~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  | SendKeyAsc
  | Desc:  Output a single down or release Virtual Keystroke using an ascii
- |        code equivilent, with the Windows API SendInput function:
+ |        code equivalent, with the Windows API SendInput function:
  |~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}
 procedure SendKeyAsc(AsciiKey: SmallInt; booDown: boolean);
 begin
@@ -928,7 +928,7 @@ begin
   GetAEKey := GetAsyncKeyState(Integer(KeyPressed)) <> 0;
 end; { function }
 
-// Return the Virual Key Equivalent for a ASCII Key
+// Return the Virtual Key Equivalent for a ASCII Key
 
 function GetAscVirtualKey(AKey: byte): ShortInt;
 begin

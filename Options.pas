@@ -46,7 +46,7 @@ begin
 end;
 //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-//+++++++++++++++Enter Stop Lenght++++++++++++++++++++++++++++++++++++++++++++++
+//+++++++++++++++Enter Stop Length++++++++++++++++++++++++++++++++++++++++++++++
 procedure TOptionForm.RBStopAtClick(Sender: TObject);
 begin
    stopAt:=(Sender as TRadioButton).Tag;
